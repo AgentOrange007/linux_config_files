@@ -49,6 +49,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec kitty
 
+# start double commander file manager
+bindsym $mod+shift+f exec doublecmd
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -122,15 +125,16 @@ bindsym $mod+minus scratchpad show
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $w1 1 : shell
+set $w2 2 : web
 set $w3 3 : chat
 set $w4 4 : files
-
+set $w5 5 : misc
 
 ## Assign section
 assign [title="kitty"]  → $w1
+assign [class="firefox"]  → $w2
 assign [title="Telegram"]        → $w3
 assign [class="Double Commander"] → $w4
-
 
 # switch to workspace
 bindsym $mod+1 workspace number 1
@@ -159,16 +163,18 @@ bindsym $mod+Shift+0 move container to workspace number 10
 
 # Assign workspaces to output
 workspace "$w1" output HDMI1
+workspace "$w2" output HDMI1
 workspace "$w3" output HDMI1
 workspace "$w4" output HDMI1
+workspace "$w5" output HDMI2
 
 
 # Startup programs
 exec --no-startup-id /usr/bin/kitty
 exec --no-startup-id /usr/bin/firefox
-exec --no-startup-id /usr/bin/doublecmd
+#exec --no-startup-id /usr/bin/doublecmd
 exec --no-startup-id /usr/bin/telegram-desktop
-exec --no-startup-id /usr/bin/spotify
+#exec --no-startup-id /usr/bin/spotify
 exec --no-startup-id /usr/bin/code
 
 
