@@ -177,6 +177,7 @@ exec --no-startup-id /usr/bin/telegram-desktop
 #exec --no-startup-id /usr/bin/spotify
 exec --no-startup-id /usr/bin/code
 exec_always --no-startup-id picom
+exec_always --no-startup-id plank
 
 
 # reload the configuration file
@@ -204,6 +205,8 @@ bindsym $mod+Shift+e mode "(l)ock (r)eboot (p)oweroff (e)xit-i3"
 
 # Take screenshot
 bindsym Print exec "scrot '%d.%m.%Y_%H.%M.%S_screenshot.png' -e 'mv $f ~/Screenshots/'" 
+bindsym --release Shift+Print exec --no-startup-id "mkdir -p ~/Screenshots && scrot -s ~/Screenshots/screenshot-%Y%m%d_%H%M%S.png"
+
 
 # Set wallpaper
 exec_always feh --bg-scale ~/arch_linux.png
