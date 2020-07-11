@@ -107,10 +107,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+shift+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -129,12 +129,14 @@ set $w2 2 : 
 set $w3 3 : 
 set $w4 4 : 
 set $w5 5 : 領
+set $w6 6 : 
 
 ## Assign section
 assign [title="kitty"]  → $w1
 assign [class="firefox"]  → $w2
 assign [title="Telegram"]        → $w3
 assign [class="Double Commander"] → $w4
+assign [class="Thunar"]  → $w6
 
 # switch to workspace
 bindsym $mod+1 workspace number 1
@@ -177,7 +179,8 @@ exec --no-startup-id /usr/bin/telegram-desktop
 #exec --no-startup-id /usr/bin/spotify
 exec --no-startup-id /usr/bin/code
 exec_always --no-startup-id picom
-exec_always --no-startup-id plank
+#exec_always --no-startup-id plank
+exec --no-startup-id /usr/bin/thunar
 
 
 # reload the configuration file
